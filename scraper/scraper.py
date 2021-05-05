@@ -4,6 +4,7 @@ from config_mysql import *
 from db import *
 import pprint
 import mysql.connector
+import datetime
 
 # constants
 driver_path = './chromedriver'
@@ -69,9 +70,15 @@ while index < length:
     for ind, vals in enumerate(data_vals):
         stonk[data_order[ind]] = vals.text
 
+    stonk['date_time'] = datetime.datetime.now()
     # fix data types for stock data
     fix_values(stonk)
     pprint.pprint(stonk)
+
+    # insert into db
+    insert_quote(cursor, stonk)
+    cnxn.commit()
+
     index += 1
 
 cnxn.close()
