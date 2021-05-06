@@ -23,6 +23,9 @@ cursor = cnxn.cursor()
 create_stock_table(cursor)
 cnxn.commit()
 
+delete(cursor)
+cnxn.commit()
+
 # setup web scraper stuff
 driver = webdriver.Chrome(executable_path=driver_path)
 driver.get(url)

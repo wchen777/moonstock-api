@@ -1,13 +1,16 @@
+# use -999 in place of NULL or - values
 def convert_to_float(stonk, key):
     if stonk[key] == '-':
-        return
-    stonk[key] = float(stonk[key].replace(',', ''))
+        stonk[key] = None
+    else:
+        stonk[key] = float(str(stonk[key]).replace(',', ''))
 
 
 def convert_to_int(stonk, key):
     if stonk[key] == '-':
-        return
-    stonk[key] = int(stonk[key].replace(',', ''))
+        stonk[key] = None
+    else:
+        stonk[key] = int(str(stonk[key]).replace(',', ''))
 
 
 def fix_values(stonk):

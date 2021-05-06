@@ -7,7 +7,7 @@ def create_stock_table(cursor):
                    "EPS_trailing FLOAT(6,2),"
                    "PE_forward FLOAT(6,2),"
                    "PE_trailing FLOAT(6,2),"
-                   "change FLOAT(6,2),"
+                   "`change` FLOAT(6,2),"
                    "change_percent VARCHAR(255),"
                    "dividend FLOAT(6,2),"
                    "dividend_yield VARCHAR(255),"
@@ -45,8 +45,12 @@ def tuple_from_dict(stonk):
 
 def insert_quote(cursor, stonk):
     query = ("INSERT INTO stocks (company_name, ticker, price, EPS_forward, EPS_trailing"
-             ", PE_forward, PE_trailing, change, change_percent, dividend, dividend_yield"
+             ", PE_forward, PE_trailing, `change`, change_percent, dividend, dividend_yield,"
              "market_cap, prev_close, volume, weight_sp500, year_high, year_low, date_time) "
          "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)")
     data = tuple_from_dict(stonk)
     cursor.execute(query, data)
+
+
+def delete(cursor):
+    cursor.execute("DELETE FROM stocks")
