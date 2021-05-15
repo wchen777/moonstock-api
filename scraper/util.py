@@ -1,13 +1,13 @@
 # use None in place of - values
 def convert_to_float(stonk, key):
-    if stonk[key] == '-':
+    if stonk[key] == '-' or stonk[key] == "":
         stonk[key] = None
     else:
         stonk[key] = float(stonk[key].replace(',', ''))
 
 
 def convert_to_int(stonk, key):
-    if stonk[key] == '-':
+    if stonk[key] == '-' or stonk[key] == "":
         stonk[key] = None
     else:
         stonk[key] = int(stonk[key].replace(',', ''))
