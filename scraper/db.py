@@ -55,7 +55,7 @@ def insert_quote(cursor, stonk):
 def delete(cursor):
     cursor.execute("DELETE FROM stocks")
 
-    
+
 # CREATE TABLE IF NOT EXISTS stocks (company_name VARCHAR(255), ticker VARCHAR(255), price FLOAT(7,2), EPS_forward FLOAT(6,2), EPS_trailing FLOAT(6,2),"
 #                    "PE_forward FLOAT(6,2),"
 #                    "PE_trailing FLOAT(6,2),"
