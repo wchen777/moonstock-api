@@ -8,4 +8,4 @@ Moonstock API offers multiple endpoints for stock data and analysis. (currently 
 **/\<TICKER\>?days=\<#_OF_DAYS\>** - Get all available data from the past \<#_OF_DAYS\> (ex. the past 7 days) for a stock in the S&P500 using its ticker.
 
 ### Stock Analysis
-**/EPS-indicator/\<TICKER\>**
+**/EPS-indicator?=\<TICKER\>**
