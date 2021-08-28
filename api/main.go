@@ -8,8 +8,11 @@ import (
 	"os/signal"
 	"time"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
 )
+
+// db, err := sql.Open("mysql", "username:password@tcp(127.0.0.1:3306)/moonstock_api")
 
 func main() {
 	// create new logger
